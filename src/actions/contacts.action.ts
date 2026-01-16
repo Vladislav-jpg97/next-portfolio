@@ -13,7 +13,9 @@ export const contactsAction = async ({ email, message }: ContactsType) => {
 
         const telegramUrl = `https://api.telegram.org/bot${token}/sendMessage`;
 
-        const text = `New message from Portfolio:\nEmail: ${email}\nMessage: ${message}`;
+        const text = `Новое сообщение от ${email}:\n
+				Электронная почта: ${email}\n
+				Сообщение: ${message}`;
 
         const response = await fetch(telegramUrl, {
             method: "POST",
