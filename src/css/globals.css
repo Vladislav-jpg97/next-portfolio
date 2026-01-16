@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+
+:root {
+    --orange-1: #FF543E ;
+    --sky-1: #9EC2D0;
+    --body: #F5FBFF ;
+    --blue: #1A71D2 ;
+    --bg-gradient: linear-gradient(to right, #F4F8F9, #F5FBFF);
+
+}
+
+@theme inline {
+    --color-orange-01: var(--orange-1);
+    --color-sky-01: var(--sky-1);
+    --color-body: var(--body);
+    --color-blue: var(--blue);
+    --color-bg-gradient: var(--bg-gradient)
+
+}
+
+.bg{
+    background-color: linear-gradient(to right, #F4F8F9, #F5FBFF);
+}
+
