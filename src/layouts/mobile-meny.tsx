@@ -8,7 +8,7 @@ import Instagram from "@public/svg/instagram-svgrepo-com.svg";
 import VK from "@public/svg/vk-v2-svgrepo-com.svg";
 import FaceBook from "@public/svg/facebook-1-svgrepo-com.svg";
 import Whatsapp from "@public/svg/whatsapp-whats-app-svgrepo-com.svg";
-import { NavigationLink } from "./NavLink";
+import { NavigationLink } from "@/components/nav-link";
 
 
 export const MobileMenu = ({ open, onClose }: Props) => {

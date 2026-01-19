@@ -1,22 +1,32 @@
 "use client"
 
-import { cn } from "@/lib/utils"
 import { ComponentProps } from "react"
+import { cva, VariantProps } from "class-variance-authority"
+import { cn } from "@/lib/utils"
 
-export const Group = ({ className, direction,items,justify, ...props }: Props) => {
-    return <div className={
-        cn("flex gap-5", {
-            "flex-row": direction === "row",
-            "flex-col": direction === "col",
-            "items-center": items === "center",
-            "justify-between" : justify === "between"
-        } , className)
-    } {...props} />
-}
 
-type Props = ComponentProps<"div"> & {
-    direction?: "row" | "col",
-    items?: "center",
-    justify?: "between"
+const groupStyles = cva("flex gap-5", {
+	variants: {
+		direction: {
+			row: "flex-row",
+			col: "flex-col",
+		},
+		items: {
+			center: "items-center",
+		},
+		justify: {
+			between: "justify-between",
+		},
+	},
+	defaultVariants: {
+		direction: "row",
+	},
+})
 
+type Props = ComponentProps<"div"> & VariantProps<typeof groupStyles>
+
+export const Group = ({ className, direction, items, justify, ...props }: Props) => {
+	return (
+		<div className={cn(groupStyles({ direction, items, justify }), className)} {...props} />
+	)
 }

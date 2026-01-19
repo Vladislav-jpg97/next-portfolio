@@ -1,49 +1,46 @@
 "use client"
 
-import { cn } from "@/lib/utils"
 import Link from "next/link"
 import { ComponentProps } from "react"
+import { cva, VariantProps } from "class-variance-authority"
+import { cn } from "@/lib/utils"
 
+// Определяем cva для span/link
+const linkStyles = cva(
+	"font-semibold inline-block transition-all duration-300", // базовые классы
+	{
+		variants: {
+			size: {
+				"20": "text-[15px] md:text-[18px] lg:text-[20px]",
+				"24": "text-[18px] md:text-[20px] lg:text-[24px]",
+			},
+			color: {
+				defaut: "text-black hover:text-orange-01 focus:text-orange-01 active:text-orange-01",
+				orange: "text-orange-01 hover:text-orange-02 focus:text-orange-02 active:text-orange-02",
+				sky: "text-sky-01 hover:text-sky-01 focus:text-sky-01 active:text-sky-01",
+				blue: "text-blue hover:text-orange-01 focus:text-orange-01 active:text-orange-01",
+			},
+			opacity: {
+				"75": "hover:opacity-75",
+			},
+		},
+		defaultVariants: {
+			size: "20",
+			color: "defaut",
+		},
+	}
+)
 
+type Props = ComponentProps<typeof Link> & VariantProps<typeof linkStyles>
 
-export const CustomLink = ({
-    className,
-    children,
-    size = "20",
-    color = "defaut",
-    opacity,
-    ...props
-}: Props) => {
-    return (
-        <Link
-            scroll={false}
-            className={cn(
-                "font-semibold inline-block",
-                {
-                    // ===== SIZE =====
-                    "text-[15px] md:text-[18px] lg:text-[20px]": size === "20",
-                    "text-[18px] md:text-[20px] lg:text-[24px]": size === "24",
-
-                    // ===== COLOR =====
-                    "text-black hover:text-orange-01 focus:text-orange-01 active:text-orange-01":
-                        color === "defaut",
-                    "text-sky-01 hover:text-sky-01 focus:text-sky-01 active:text-sky-01":
-                        color === "sky",
-                        "text-blue hover:text-orange-01 focus:text-orange-01 active:text-orange-01":
-                        color === "blue",
-                        "hover:opacity-75 transition-all duration-300": opacity === "75"
-                },
-                className
-            )}
-            {...props}
-        >
-            {children}
-        </Link>
-    )
-}
-
-type Props = ComponentProps<typeof Link> & {
-    size?: "20" | "24"
-    color?: "defaut" | "orange" | "sky" | "blue"
-    opacity?: "75"
+export const CustomLink = ({ className, children, size, color, opacity, ...props }: Props) => {
+	return (
+		<Link
+			scroll={false}
+			className={cn(linkStyles({ size, color, opacity }), className)}
+			{...props}
+		>
+			{children}
+		</Link>
+	)
 }

@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils"
 import { cva, VariantProps } from "class-variance-authority"
 import { ComponentProps } from "react"
 
-export const inputVariant = cva("inline-block pb-[15px] outline-none", {
+export const inputVariant = cva("inline-block pb-3.75 outline-none", {
     variants: {
         border: {
             bottom: "border-b border-b-[#E5E5E5] focus:border-b-[#FF543E] active:border-b-[#FF543E]"
