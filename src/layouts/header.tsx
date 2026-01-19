@@ -93,12 +93,12 @@ export const Header = ({
 						</div>
 
 						<div className="space-x-7">
-							<button type="button" className="hover:opacity-60 active:opacity-60 focus:opacity-60">
+							<NavigationLink href="#!" className="hover:opacity-60 active:opacity-60 focus:opacity-60">
 								<Image src={In} alt="LinkedIn" width={32} height={32} />
-							</button>
-							<button type="button" className="hover:opacity-60 active:opacity-60 focus:opacity-60">
+							</NavigationLink>
+							<NavigationLink href="https://github.com/Vladislav-jpg97" target="_blank" className="hover:opacity-60 active:opacity-60 focus:opacity-60">
 								<Image src={GitHub} alt="GitHub" width={36} height={36} />
-							</button>
+							</NavigationLink>
 						</div>
 					</div>
 				</div>
