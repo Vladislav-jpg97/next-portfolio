@@ -1,5 +1,5 @@
 import { AboutMe } from "./_components/about-me"
-import { HomeConact } from "./_components/home-contact"
+import { HomeContact } from "./_components/home-contact"
 import { HomeContent } from "./_components/home-content"
 import { TimeLineContent } from "./_components/time-line-content"
 
@@ -17,7 +17,7 @@ const HomePage = async () => {
 
         <TimeLineContent />
 
-        <HomeConact/>
+        <HomeContact/>
 
 
     </>

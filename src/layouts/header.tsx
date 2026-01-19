@@ -7,12 +7,13 @@ import { CustomLink } from "@/components/link";
 import { NavigationLink } from "@/components/nav-link";
 import Image from "next/image";
 import { cva } from "class-variance-authority";
+import { cn } from "@/lib/utils";
 
 import In from "@public/img/in.png";
 import GitHub from "@public/img/github-icon.png";
 import { MobileMenu } from "@/layouts/mobile-meny";
 
-// создаем CVA для гамбургера
+// ===== CVA для гамбургера =====
 const burgerSpan = cva(
 	"block w-10 h-1 mb-2 relative bg-black before:absolute before:left-0 before:w-full before:h-1 before:bg-black after:absolute after:left-0 after:w-full after:h-1 after:bg-black",
 	{
@@ -28,6 +29,19 @@ const burgerSpan = cva(
 	}
 );
 
+// ===== CVA для Header =====
+const headerStyles = cva("sticky top-0 z-50 bg-white/60 py-7", {
+	variants: {
+		variant: {
+			default: "",
+			custom: "",
+		},
+	},
+	defaultVariants: {
+		variant: "default",
+	},
+});
+
 export const Header = ({
 	className,
 	...props
@@ -40,11 +54,7 @@ export const Header = ({
 	}, []);
 
 	return (
-		<header
-			className={`py-7 bg-white/60 sticky top-0 z-50 ${className ?? ""}`}
-			data-slot="header"
-			{...props}
-		>
+		<header className={cn(headerStyles(), className)} {...props} data-slot="header">
 			<Container>
 				{/* Mobile */}
 				<div className="block md:hidden">
@@ -59,7 +69,6 @@ export const Header = ({
 							data-state={open ? "open" : "closed"}
 							className="group relative z-10"
 						>
-							{/* span через CVA */}
 							<span className={burgerSpan({ state: open ? "open" : "closed" })} />
 						</button>
 					</Group>
