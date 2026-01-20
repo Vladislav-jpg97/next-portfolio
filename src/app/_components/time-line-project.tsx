@@ -60,10 +60,11 @@ export const TimeLineProject = ({ timeLineData, index }: Props) => {
 				hasLine
 				className="mb-2 inline-block"
 			>
-				{timeLineData.title}
+				{timeLineData.title[1]}
 			</Heading>
+			<br />
 
-			{timeLineData.title2 && (
+			{timeLineData.title[2] && (
 				<Heading
 					data-aos="fade-up"
 					data-aos-duration="2000"
@@ -72,7 +73,7 @@ export const TimeLineProject = ({ timeLineData, index }: Props) => {
 					hasLine
 					className="mb-2 inline-block"
 				>
-					{timeLineData.title2}
+					{timeLineData.title[2]}
 				</Heading>
 			)}
 

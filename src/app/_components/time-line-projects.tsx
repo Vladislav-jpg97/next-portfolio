@@ -16,14 +16,24 @@ export const TimeLineProjects = () => {
 	return (
 		<section id="HowIwork" className="py-10">
 			<Container>
-				<div className="text-center mb-10">
+				{/* МОБИЛКА */}
+				<div className="text-center mb-10 block md:hidden">
 					<Heading data-aos="fade-up" data-aos-duration="2000" as="h3" hasLine className="inline-block">
 						Как я
 					</Heading>
+					<br />
 					<Heading data-aos="fade-up" data-aos-duration="2000" as="h3" hasLine className="inline-block">
 						работаю
 					</Heading>
 				</div>
+
+				{/* ПЛАНШЕТ + ДЕСКТОП */}
+				<div className="text-center mb-10 hidden md:block">
+					<Heading data-aos="fade-up" data-aos-duration="2000" as="h3" hasLine className="inline-block">
+						Как я работаю
+					</Heading>
+				</div>
+
 
 				<ul data-aos="fade-up" data-aos-duration="2000" className={timelineList()}>
 					{timeLineProject.map((item, index) => (
