@@ -3,7 +3,6 @@
 import { Heading } from "@/components/headers";
 import { Paragraph } from "@/components/paragraph";
 import { cva } from "class-variance-authority";
-import { cn } from "@/lib/utils"; // твой helper для объединения классов
 import type { timeLineProjectMockType } from "@/mocks/time-line.mock";
 
 // CVA для li

@@ -5,7 +5,7 @@ import { Heading } from "@/components/headers";
 import { TimeLineProject } from "./time-line-project";
 import { timeLineProject } from "@/mocks/time-line.mock";
 import { cva } from "class-variance-authority";
-import { cn } from "@/lib/utils";
+
 
 // CVA для ul линии времени
 const timelineList = cva(

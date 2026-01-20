@@ -5,7 +5,7 @@ import { Header } from "@/layouts/header"
 import { Footer } from "@/layouts/footer"
 import { Montserrat } from "next/font/google";
 import { cn } from "@/lib/utils"
-import { AosProvider } from "@/components/aos-provider";
+import { AosProvider } from "@/lib/aos-provider";
 import { Suspense } from "react";
 
 

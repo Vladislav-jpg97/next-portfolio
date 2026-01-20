@@ -6,7 +6,6 @@ import { Paragraph } from "@/components/paragraph";
 import type { ProjectMockType } from "@/mocks/projects.mock";
 import Image from "next/image";
 import { cva } from "class-variance-authority";
-import { cn } from "@/lib/utils";
 
 // CVA для контейнера картинки с hover эффектами
 const projectImageWrapper = cva(
